@@ -2,6 +2,7 @@
 // colors
 $bg-color: #FFFFFF;
 $light-grey: #999;
+$code-bg: #000;
 
 // layout
 $nav-width: 10%;
@@ -18,8 +19,7 @@ body {
 
 #wrapper {
   max-width: 960px;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding: 0em 1.5em 0em 1.5em; // t r b l
   margin-left: auto;
   margin-right: auto;
   background-color: $bg-color;
@@ -62,23 +62,35 @@ body {
   padding: 0.5em 0 4em 0;
 }
 
+.highlight {
+  background-color: $code-bg;
+  margin: 1.0em 1.0em 1.0em 1.0em;
+  padding: 0.3em 0.3em 0.3em 0.3em;
+}
+
 h1 {
   font-size: 2.2em;
+  padding: 0.3em 0em 0.3em 0em;
 }
 
 h2 {
   font-size: 2.0em;
+  padding: 0.3em 0em 0.3em 0em;
 }
 
 h3 {
   font-size: 1.8em;
+  padding: 0.3em 0em 0.3em 0em;
 }
 
 h4 { font-size: 1.6em; }
 
 h5 { font-size: 1.4em; }
 
-p { font-size: 1.2em; }
+p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
 
 strong { font-weight: bold; }
 

@@ -5,18 +5,19 @@ require 'glorify'
 
 Tilt.prefer Sinatra::Glorify::Template
 
-# for all markdown files, use post.haml as layout
+
 set :markdown, :layout_engine => :haml
 
 get '/' do
   markdown :index, :layout => :layout
 end
 
+
 get '/test' do
   markdown :test
 end
 
-get '/:post' do
+get '/post/:post' do
   markdown params[:post].to_sym
 end
 

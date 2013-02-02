@@ -6,14 +6,26 @@ heading
 
 this is a test post
 to try things out
-it include some code:
+it includes some code:
 ---
 
 ```ruby
 def foo
+  # comment
   [].map { |x| x }
   1 + 1
+  foo :x, :y, "zzz", 1.234
+  <<-eos
+  a b c
+  d
+  eos
 end
+```
+
+```haskell
+-- map
+foo :: (a -> b) -> [a] -> [b]
+foo f xs = map f xs
 ```
 
 subheading
@@ -196,14 +208,14 @@ Images
 
 To include an image, just put a "!" in front of a text link:
 
-![alternate text](http://someurl/image.gif)
+`![alternate text](http://someurl/image.gif)`
 
 
 The "alternate text" will show up if the browser can't load the image.
 
 You can also use a title if you want, like this:
 
-![tiny arrow](http://greg.vario.us/img/extlink.png "tiny arrow")
+`![tiny arrow](http://greg.vario.us/img/extlink.png "tiny arrow")`
 
 
 
