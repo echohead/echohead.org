@@ -1,0 +1,73 @@
+
+$bgcolor: #FFFFFF;
+
+body {
+  font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
+  color: #000000;
+}
+
+#wrapper {
+  max-width: 960px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $bgcolor;
+}
+
+#header {
+  width: 100%;
+  position: relative;
+  font-size: 1em;
+  margin: 0;
+}
+
+#content {
+  width: 74%;
+  float: left;
+  margin-right: 2%;
+  display: inline;
+  margin-bottom: 3em;
+}
+
+#navigation {
+  float: right;
+  margin-right: 0;
+  display: inline;
+  text-align: center;
+}
+
+#footer {
+  width: 74.4186%;
+  float: left;
+  margin-right: 2.32558%;
+  display: inline;
+  margin-bottom: 4.66667em;
+  text-align: center;
+  color: #999;
+  padding: 0.5em 0 4em 0;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 2.0em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.6em;
+}
+
+h5 {
+    font-size: 1.4em;
+}
+
+p {
+    font-size: 1.2em;
+}

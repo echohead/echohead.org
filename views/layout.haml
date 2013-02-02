@@ -1,0 +1,23 @@
+%html
+  %head
+    %title echohead.org
+    %link(rel="stylesheet" href="css/reset-min.css")
+    %link(rel="stylesheet" href="css/styles.css")
+    %link(rel="stylesheet" href="css/pygments.css")
+  %body
+    #wrapper
+      #header
+        %h1 echohead.org
+      #content
+        =yield
+      #navigation
+        %h3 side bar
+        %br
+        %a(href='/music') music
+        %br
+        more stuff
+        %br
+        some more
+      #footer
+        %p
+          © tim miller
