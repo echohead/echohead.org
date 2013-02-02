@@ -1,38 +1,20 @@
 #!/usr/bin/env ruby
 $:.push "#{File.dirname __FILE__}/lib"
-require 'markdown'
+require 'sinatra'
+require 'glorify'
 
-def md
-<<-eos
-heading
-=======
-- bullet points
+Tilt.prefer Sinatra::Glorify::Template
 
-# a test post
-
-this is a test post
-to try things out
-it include some code:
----
-
-```ruby
-def foo
-  [].map { |x| x }
-  1 + 1
-end
-```
-
-subheading
-----------
-
-asdf
-eos
-end
-
-
+# for all markdown files, use post.haml as layout
+set :markdown, :layout_engine => :haml
 
 get '/' do
-  haml :index, :locals => { :md => Markdown.to_html(md) }
+  # use index.haml for readme
+  markdown :index, :layout => :layout
+end
+
+get '/:post' do
+  markdown params[:post].to_sym
 end
 
 configure do
