@@ -9,8 +9,11 @@ Tilt.prefer Sinatra::Glorify::Template
 set :markdown, :layout_engine => :haml
 
 get '/' do
-  # use index.haml for readme
   markdown :index, :layout => :layout
+end
+
+get '/test' do
+  markdown :test
 end
 
 get '/:post' do

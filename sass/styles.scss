@@ -1,8 +1,18 @@
 
-$bgcolor: #FFFFFF;
+// colors
+$bg-color: #FFFFFF;
+$light-grey: #999;
 
+// layout
+$nav-width: 10%;
+$nav-push-left: 15%;
+$content-width: 74%;
+
+// fonts
+//$font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
+$font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
 body {
-  font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
+  font-family: $font-family;
   color: #000000;
 }
 
@@ -12,7 +22,7 @@ body {
   padding-right: 1.5em;
   margin-left: auto;
   margin-right: auto;
-  background-color: $bgcolor;
+  background-color: $bg-color;
 }
 
 #header {
@@ -22,20 +32,23 @@ body {
   margin: 0;
 }
 
-#content {
-  width: 74%;
-  float: left;
-  margin-right: 2%;
-  display: inline;
-  margin-bottom: 3em;
-}
-
 #navigation {
+  width: $nav-width;
+  right: $nav-push-left;
   float: right;
   margin-right: 0;
   display: inline;
   text-align: center;
   position: fixed;
+  padding-top: 5em;
+}
+
+#content {
+  width: $content-width;
+  float: left;
+  margin-right: 2%;
+  display: inline;
+  margin-bottom: 3em;
 }
 
 #footer {
@@ -45,30 +58,28 @@ body {
   display: inline;
   margin-bottom: 4.66667em;
   text-align: center;
-  color: #999;
+  color: $light-grey;
   padding: 0.5em 0 4em 0;
 }
 
 h1 {
-    font-size: 2.2em;
+  font-size: 2.2em;
 }
 
 h2 {
-    font-size: 2.0em;
+  font-size: 2.0em;
 }
 
 h3 {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 
-h4 {
-    font-size: 1.6em;
-}
+h4 { font-size: 1.6em; }
 
-h5 {
-    font-size: 1.4em;
-}
+h5 { font-size: 1.4em; }
 
-p {
-    font-size: 1.2em;
-}
+p { font-size: 1.2em; }
+
+strong { font-weight: bold; }
+
+em { font-style: italic; }

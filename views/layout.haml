@@ -1,6 +1,9 @@
+-# coding:
+!!! 5
 %html
   %head
     %title echohead.org
+    %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
     %link(rel="stylesheet" href="css/reset-min.css")
     %link(rel="stylesheet" href="css/styles.css")
     %link(rel="stylesheet" href="css/pygments.css")
@@ -12,6 +15,8 @@
         =yield
       #navigation
         %h3 side bar
+        %br
+        %a(href='/') home
         %br
         %a(href='/music') music
         %br
