@@ -7,5 +7,5 @@ end
 
 task :shotgun do
   desc 'start a development server'
-  exec "bundle exec shotgun --host '*' ./sandbox.rb"
+  exec "bundle exec shotgun --host '*' ./app.rb"
 end
