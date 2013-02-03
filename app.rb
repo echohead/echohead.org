@@ -18,7 +18,8 @@ get '/test' do
 end
 
 get '/post/:post' do
-  markdown params[:post].to_sym
+  #markdown params[:post].to_sym, :layout => :layout
+  markdown "posts/#{params[:post]}".to_sym, :layout => :layout
 end
 
 configure do

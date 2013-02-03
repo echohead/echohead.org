@@ -4,6 +4,9 @@ heading
 
 # a test post
 
+
+`backticks` should work.
+
 this is a test post
 to try things out
 it includes some code:
