@@ -22,6 +22,8 @@ cd $svc_dir && rake install
 
 chown -R $svc_user:$svc_user $svc_dir
 
+grep $svc_user /etc/sudoers || echo "$svc_user   ALL=(ALL) NOPASSWD: /sbin/restart echohead.org" >> /etc/sudoers
+
 cat > /etc/init/$svc_name.conf <<EOF
 start on runlevel [2345]
 stop on runlevel [06]
@@ -34,3 +36,4 @@ exec start-stop-daemon \\
   --exec $svc_dir/bin/server \\
     >> $svc_dir/log/upstart.log 2>&1
 EOF
+
