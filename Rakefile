@@ -25,7 +25,7 @@ task :restart do
 end
 
 task :pull do
-  system 'git pull' or raise `git pull 2>&1`
+  system 'git checkout master && git pull origin master' or raise `git pull 2>&1`
 end
 
 task :install do
