@@ -26,12 +26,12 @@ cat > /etc/init/$svc_name.conf <<EOF
 start on runlevel [2345]
 stop on runlevel [06]
 respawn
-exec start-stop-daemon \
-  --start \
-  --chuid $svc_user \
-  --chgid $svc_user
-  --make-pidfile \
-  --pidfile $svc_dir/run/upstart.pid \
-  --exec $svc_dir/bin/server \
+exec start-stop-daemon \\
+  --start \\
+  --chuid $svc_user \\
+  --chgid $svc_user \\
+  --make-pidfile \\
+  --pidfile $svc_dir/run/upstart.pid \\
+  --exec $svc_dir/bin/server \\
     >> $svc_dir/log/upstart.log 2>&1
 EOF
