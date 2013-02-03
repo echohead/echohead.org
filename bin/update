@@ -1,0 +1,7 @@
+#!/bin/bash
+set -eux
+cd $(dirname $0)/..
+git checkout master
+git pull
+rake install
+restart echohead.org
