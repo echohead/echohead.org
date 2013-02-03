@@ -25,18 +25,10 @@ end
 
 post '/__push__' do
   begin
-    puts "foo"
-    puts params[:payload]
-    puts "foo"
+    puts "received push notification: #{params[:payload]}"
     push = JSON.parse(params[:payload])
-    puts "foo"
-    puts push.inspect
-    puts "foo"
-    puts "foo"*30
-    puts push['repository']['name']
-    puts push['ref']
     if push['repository']['name'] == 'echohead.org' and push['ref'] == 'refs/heads/master'
-      puts "updating."
+      puts "applying update."
       fork do
         exec "#{File.expand_path(File.dirname __FILE__)}/bin/update"
       end

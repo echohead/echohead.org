@@ -1,12 +1,13 @@
 #!/bin/bash
-
 # installs echohead.org as a system daemon from scratch.
-
 set -eux
+
 svc_user=web
 svc_name=echohead.org
 svc_dir=/opt/$svc_name
 repo=https://github.com/echohead/echohead.org.git
+
+stop $svc_name || echo "$svc_name not running."
 
 id $svc_user || useradd -G admin -m $svc_user -s /bin/false
 
