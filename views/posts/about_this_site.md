@@ -4,7 +4,7 @@ about this site...
 i've built several personal websites over the years, each time learning some new lessons.
 Here's the process which led to the site you see before you now.
 
-The code is on github [here](http://github.com/echohead/echohead.org)
+The code is on github [here](http://github.com/echohead/echohead.org).
 
 # requirements
 * deploy with `git push`
