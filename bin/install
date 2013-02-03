@@ -6,6 +6,7 @@ svc_user=web
 svc_name=echohead.org
 svc_dir=/opt/$svc_name
 repo=https://github.com/echohead/echohead.org.git
+port=9600
 
 stop $svc_name || echo "$svc_name not running."
 
