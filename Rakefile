@@ -15,16 +15,17 @@ task :update => [:pull, :install, :restart] do
 end
 
 task :start do
-  exec 'start echohead.org'
+  desc 'start local prod server'
+  system 'start echohead.org' or raise 'service will not start'
 end
 
 task :restart do
-  exec 'restart echohead.org'
+  desc 'restart local prod server'
+  system 'restart echohead.org || start echohead.org' or raise 'service will not start'
 end
 
 task :pull do
   system 'git pull' or raise `git pull 2>&1`
-  exec 'restart echohead.org'
 end
 
 task :install do
@@ -34,13 +35,9 @@ task :install do
     f.write <<-eos
 setuid tim
 respawn
-exec "cd #{ROOT} && echo "foo" && rake prod"
+exec "cd #{ROOT} && rake restart"
 eos
   end
-end
-
-task :prod do
-  exec "cd #{ROOT} && bundle exec shotgun --host '*' --port 9400 app.rb"
 end
 
 
