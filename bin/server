@@ -1,2 +1,2 @@
 #!/bin/bash
-cd $(dirname $0)/.. && unicorn --port 9600 --env production
+cd $(dirname $0)/.. && unicorn -c ./etc/unicorn.rb --port 9600 --env production
