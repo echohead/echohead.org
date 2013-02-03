@@ -13,7 +13,7 @@ get '/' do
   markdown :index, :layout => :layout
 end
 
-get '/TODO' do
+get '/todo' do
   markdown :todo
 end
 
