@@ -13,6 +13,7 @@ The code is on github [here](http://github.com/echohead/echohead.org).
 * conveniences for development mode
 * hackability
 * tests
+* monitoring
 
 # deploying with `git push`
 As a developer, git is already constantly at my fingertips, so why not use it for deployment?
