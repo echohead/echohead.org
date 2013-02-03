@@ -13,6 +13,9 @@ get '/' do
   markdown :index, :layout => :layout
 end
 
+get '/TODO' do
+  markdown :todo
+end
 
 get '/test' do
   markdown :test
