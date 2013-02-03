@@ -28,8 +28,7 @@ stop on runlevel [06]
 respawn
 exec start-stop-daemon \\
   --start \\
-  --chuid $svc_user \\
-  --chgid $svc_user \\
+  --chuid $svc_user:$svc_user \\
   --make-pidfile \\
   --pidfile $svc_dir/run/upstart.pid \\
   --exec $svc_dir/bin/server \\
