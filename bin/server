@@ -1,2 +1,2 @@
 #!/bin/bash
-cd $(dirname $0)/.. && bundle exec shotgun --host '*' app.rb
+cd $(dirname $0)/.. && unicorn --port 9600 --env production

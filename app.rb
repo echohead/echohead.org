@@ -56,6 +56,7 @@ configure :development do
 end
 
 configure :production do
+  enable :logging
   set :raise_errors, false
   set :show_exceptions, false
 end
