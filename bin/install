@@ -13,7 +13,8 @@ id $svc_user || useradd -G admin -m $svc_user -s /bin/false
 
 apt-get install --yes libxslt-dev libxml2-dev git-core rake ruby-bundler
 
-rm -rf $svc_dir || git clone $repo $svc_dir
+if [ -d $svc_dir ]; then rm -rf $svc_dir; fi
+git clone $repo $svc_dir
 mkdir -p $svc_dir/log
 mkdir -p $svc_dir/run
 
