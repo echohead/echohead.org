@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# installs echohead.org as a system daemon from scratch.
+
+set -eux
+svc_user=web
+svc_name=echohead.org
+svc_dir=/opt/$svc_name
+repo=https://github.com/echohead/echohead.org.git
+
+id $svc_user || useradd -G admin -m $svc_user -s /bin/false
+
+apt-get install --yes libxslt-dev libxml2-dev git-core rake ruby-bundler
+
+rm -rm $svc_dir || git clone $repo $svc_dir
+mkdir -p $svc_dir/log
+mkdir -p $svc_dir/run
+
+cd $svc_dir && rake install
+
+chown -R $svc_user:$svc_user $svc_dir
+
+cat > /etc/init/$svc_name.conf <<EOF
+start on runlevel [2345]
+stop on runlevel [06]
+respawn
+exec start-stop-daemon \
+  --start \
+  --chuid $svc_user \
+  --chgid $svc_user
+  --make-pidfile \
+  --pidfile $svc_dir/run/upstart.pid \
+  --exec $svc_dir/bin/server \
+    >> $svc_dir/log/upstart.log 2>&1
+EOF
