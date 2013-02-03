@@ -1,6 +1,7 @@
 heading
 =======
 - bullet points
+- test git hook
 
 # a test post
 
