@@ -2,10 +2,17 @@ heading
 =======
 - bullet points
 - test git hook
-- test git again.
-- test git hooks, hopefully for the last time.
-# a test post
 
+# a test header
+## smaller
+### smaller still
+#### aadsfasdf
+
+1. numbered points
+  - a
+  - b
+  - c
+2. some more points
 
 `backticks` should work.
 
@@ -70,7 +77,7 @@ For a URL or email, just write it like this:
 
 To use text for the link, write it [like this](http://someurl).
 
-You can add a *title* (which shows up under the cursor), 
+You can add a *title* (which shows up under the cursor),
 [like this](http://someurl "this title shows up when you hover").
 
 Reference Links
@@ -81,15 +88,15 @@ You can also put the [link URL][1] below the current paragraph like [this][2].
    [1]: http://url
    [2]: http://another.url "A funky title"
 
-Here the text "link URL" gets linked to "http://url", and the lines showing 
+Here the text "link URL" gets linked to "http://url", and the lines showing
 "[1]: http://url" won't show anything.
 
 
-Or you can use a [shortcut][] reference, which links the text "shortcut" 
+Or you can use a [shortcut][] reference, which links the text "shortcut"
 to the link named "[shortcut]" on the next paragraph.
 
    [shortcut]: http://goes/with/the/link/name/text
-   
+
 
 
 Text
@@ -108,7 +115,7 @@ Just write paragraphs like in a text file and they will display how you would
 expect.  A blank line separates paragraphs.
 
 So this is a new paragraph. But any text on adjacent lines
-will all end up 
+will all end up
 in the same paragraph.
 
 
@@ -121,7 +128,7 @@ Blockquotes
 > You can use *italic* or lists inside them also.
 And just like with other paragraphs,
 all of these lines are still
-part of the blockquote, even without the > character in front.  
+part of the blockquote, even without the > character in front.
 
 To end the blockquote, just put a blank line before the following paragraph.
 
@@ -139,16 +146,16 @@ doing anything to it, just indent every line by at least 4 spaces (or 1 tab).
     this text file</i>.
 
 (In a normal paragraph, <b>this will show up in bold</b> just like normal HTML.)
-    
+
    Remember, you have to indent by *at least 4 spaces* to do it.  This paragraph
    won't be preformatted.
-   
-And if you use [reference][] links, make sure the links are indented 
+
+And if you use [reference][] links, make sure the links are indented
 by *fewer than* 4 spaces.
-   
+
     [reference]: http://example.com/blah
 
-(woops, that link didn't work, see? It just got displayed as preformatted text.)  
+(woops, that link didn't work, see? It just got displayed as preformatted text.)
 
 As a shortcut you can use backquotes to do the same thing while inside
 a normal pargraph.  `This won't be *italic* or **bold** at all.`
@@ -170,8 +177,8 @@ To start an ordered list, write this:
     * just indent by 4 spaces (or tab) to make a sub-list
         1. keep indenting for more sub lists
     * here i'm back to the second level
-        
-        
+
+
 Headers
 ---------
 
@@ -199,14 +206,14 @@ or you can use single spaces between then, like this:
 
 * * *
 
-or 
+or
 
-- - - - - - - 
+- - - - - - -
 
 Make sure you have a blank line above the dashes, though, or else:
 
 you will get a header
---- 
+---
 
 
 Images
@@ -251,15 +258,15 @@ More ways of doing headers:
 ##### even smaller #####
 ###### smallest still: `<h6>` header
 
-You can use up to 6 `#` characters at the beginning of the line.  
+You can use up to 6 `#` characters at the beginning of the line.
 (You can optionally put them on the end, too, and they will disappear.)
 
-   
+
 
 HTML crap
 -------------
 
-Don't worry about special HTML characters. I can write an ampersand & a 
+Don't worry about special HTML characters. I can write an ampersand & a
 less-than sign, and they show up as I intend them to:  3 < 4.
 
 (You can still write `&amp;` (& character) and `&lt;` (<) or `&gt;` (>) if you
@@ -271,7 +278,7 @@ About
 
 This text file shows you how to use [Markdown][] instead of crappy HTML when
 writing posts or comments.
-   
+
    [Markdown]: http://daringfireball.net/projects/markdown/syntax
 
 Markdown is an easier way of making HTML pages from text, rather than having to
