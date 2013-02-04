@@ -15,3 +15,15 @@ end
 RSpec.configure do |config|
   config.include Rack::Test::Methods
 end
+
+RSpec::Matchers.define :link_to do |expected|
+  match do |actual|
+    actual =~ /href='#{expected}'/
+  end
+end
+
+def ok_body(path)
+  resp = get(path).body
+  last_response.should be_ok
+  resp
+end
