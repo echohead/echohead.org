@@ -1,6 +1,5 @@
-@charset "UTF-8";
 body {
-  font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, "Lucida Grande", sans-serif;
   color: #000000; }
 
 #wrapper {
@@ -8,7 +7,9 @@ body {
   padding: 2em 1.5em 0em 1.5em;
   margin-left: auto;
   margin-right: auto;
-  background-color: white; }
+  background-color: white;
+  font-size: 1.2em;
+  line-height: 1.6em; }
 
 #header {
   width: 100%;
@@ -40,15 +41,20 @@ body {
   display: inline;
   margin-bottom: 4.66667em;
   text-align: center;
-  color: #999999;
+  color: #f0f0f0;
   padding: 0.5em 0 4em 0; }
+
+code {
+  background-color: #f0f0f0; }
 
 .highlight {
   background-color: black;
   margin: 1em 1em 1em 1em;
-  padding: 0.3em 0.3em 0.3em 0.3em; }
+  padding: 0.3em 0.3em 0.3em 0.3em;
+  color: white; }
 
 h1 {
+  font-weight: 100;
   font-size: 2.2em;
   padding: 2em 0em 0.3em 0em; }
 
@@ -67,10 +73,8 @@ h5 {
   font-size: 1.4em; }
 
 p, ul, ol, li {
-  font-size: 1.2em;
-  line-height: 1.6em; }
-  p ul, ul ul, ol ul, li ul, p ol, ul ol, ol ol, li ol, p li, ul li, ol li, li li {
-    list-style: disc inside; }
+  padding-top: 0.6em;
+  padding-bottom: 0.6em; }
 
 strong {
   font-weight: bold; }
@@ -80,7 +84,7 @@ em {
 
 blockquote {
   margin: 1em 3em;
-  color: #999999;
+  color: #f0f0f0;
   border-left: 2px solid #999999;
   padding-left: 1em; }
 
