@@ -45,7 +45,7 @@ body {
 
 .highlight {
   background-color: black;
-  margin: 1.0em 1.0em 1.0em 1.0em;
+  margin: 1em 1em 1em 1em;
   padding: 0.3em 0.3em 0.3em 0.3em; }
 
 h1 {
@@ -66,9 +66,11 @@ h4 {
 h5 {
   font-size: 1.4em; }
 
-p, ul li, ol {
+p, ul, ol {
   font-size: 1.2em;
   line-height: 1.6em; }
+  p ul, ul ul, ol ul, p ol, ul ol, ol ol, p li, ul li, ol li {
+    list-style: disc inside; }
 
 strong {
   font-weight: bold; }
@@ -79,11 +81,15 @@ em {
 blockquote {
   margin: 1em 3em;
   color: #999999;
-  border-left: 2px solid #999;
+  border-left: 2px solid #999999;
   padding-left: 1em; }
 
-ul li {
+ul {
   list-style: disc inside; }
+  ul li {
+    list-style: disc inside; }
 
 ol {
-  list-style: decimal inside; }
+  list-style: lower-alpha inside; }
+  ol li {
+    list-style: decimal inside; }

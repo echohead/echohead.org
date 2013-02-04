@@ -90,6 +90,8 @@ h5 { font-size: 1.4em; }
 p {
   font-size: 1.2em;
   line-height: 1.6em;
+
+  ul, ol, li { list-style: disc inside }
 }
 
 strong { font-weight: bold; }
@@ -103,11 +105,13 @@ blockquote {
   padding-left: 1em;
 }
 
-ul li {
+ul {
   @extend p;
   list-style: disc inside;
+  li { list-style: disc inside; }
 }
 ol {
   @extend p;
-  list-style: decimal inside;
+  list-style: lower-alpha inside;
+  li { list-style: decimal inside; }
 }
