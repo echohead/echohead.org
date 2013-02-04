@@ -21,6 +21,10 @@ get '/test' do
   markdown :test
 end
 
+get '/music' do
+  markdown :music
+end
+
 get '/post/:post' do |p|
   markdown "posts/#{p}".to_sym, :layout => :layout
 end
