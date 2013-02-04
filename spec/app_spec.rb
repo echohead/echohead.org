@@ -13,5 +13,10 @@ describe 'the music page' do
   before :all do @body = ok_body('/music') end
 
   it 'has songs on it' do pending 'todo' end
+end
 
+describe 'the sandbox' do
+  before :all do @body = ok_body('/sandbox') end
+
+  it 'has some coffeescript thing' do pending 'todo' end
 end

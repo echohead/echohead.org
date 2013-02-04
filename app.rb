@@ -13,16 +13,16 @@ get '/' do
   markdown :index, :layout => :layout
 end
 
-get '/todo' do
-  markdown :todo
-end
-
 get '/test' do
   markdown :test
 end
 
 get '/music' do
   markdown :music
+end
+
+get '/sandbox' do
+  markdown :sandbox
 end
 
 get '/post/:post' do |p|
