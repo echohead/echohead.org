@@ -2,6 +2,7 @@ source :rubygems
 gem 'glorify'
 gem 'haml'
 gem 'rake'
+gem 'rspec'
 gem 'sass'
 gem 'shotgun'
 gem 'sinatra'
