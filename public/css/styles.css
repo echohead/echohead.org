@@ -66,10 +66,10 @@ h4 {
 h5 {
   font-size: 1.4em; }
 
-p, ul, ol {
+p, ul, ol, li {
   font-size: 1.2em;
   line-height: 1.6em; }
-  p ul, ul ul, ol ul, p ol, ul ol, ol ol, p li, ul li, ol li {
+  p ul, ul ul, ol ul, li ul, p ol, ul ol, ol ol, li ol, p li, ul li, ol li, li li {
     list-style: disc inside; }
 
 strong {
@@ -84,12 +84,5 @@ blockquote {
   border-left: 2px solid #999999;
   padding-left: 1em; }
 
-ul {
+ul, ol, li {
   list-style: disc inside; }
-  ul li {
-    list-style: disc inside; }
-
-ol {
-  list-style: lower-alpha inside; }
-  ol li {
-    list-style: decimal inside; }
