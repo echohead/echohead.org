@@ -31,7 +31,6 @@ cat > /etc/nginx/sites-available/$svc_name <<EOF
 server {
   listen          80;
   server_name     echohead.org;
-  access_log      $svc_dir/logs/nginx.log main;
   location / {
     proxy_pass      http://127.0.0.1:$port;
   }
