@@ -2,6 +2,7 @@
 $white: #ffffff;
 $black: #000000;
 $light-grey: #f0f0f0;
+$medium-grey: #999;
 
 $bg-color: $white;
 $inline-code-bg: $light-grey;
@@ -14,10 +15,9 @@ $nav-push-left: 15%;
 $content-width: 74%;
 
 // fonts
-//$font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
 $font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-  Helvetica, "Arial Narrow", Arial, "Lucida Grande", sans-serif;
-//$font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+  Helvetica, "Arial Narrow", Arial, "Lucida Grande", Tahoma, Verdana sans-serif;
+//$font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, Tahoma, Verdana, sans-serif;
 
 body {
   font-family: $font-family;
@@ -68,7 +68,7 @@ body {
   display: inline;
   margin-bottom: 4.66667em;
   text-align: center;
-  color: $light-grey;
+  color: $medium-grey;
   padding: 0.5em 0 4em 0;
 }
 

@@ -22,7 +22,7 @@ get '/music' do
 end
 
 get '/sandbox' do
-  markdown :sandbox
+  haml :sandbox
 end
 
 get '/post/:post' do |p|

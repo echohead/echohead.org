@@ -20,3 +20,4 @@ describe 'the sandbox' do
 
   it 'has some coffeescript thing' do pending 'todo' end
 end
+
