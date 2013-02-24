@@ -64,6 +64,7 @@ I've casually deployed changes several times during the writing of this post.
 I wanted to run this whole thing inside a webserver setup which is fast and reliable.
 For this, I chose [unicorn][unicorn] behind [nginx][nginx].  Nginx handles buffering requests, and multiple unicorn processes serve them on a first-free basis.  The number of unicorn processes can be easily scaled up or down dynamically by sending signals to the main unicorn process.  New worker processes can overlap with old ones to allow zero-downtime service restarts.
 
+All of this gets configured for the first time by simply cloning the source repo on the host and running `bin/install`.
 
 
 
@@ -95,7 +96,7 @@ Test EVERYTHING:
 
 ```ruby
 describe 'about_this_site' do
-  get '/about_this_site/'.body.should =~ /body.should/
+  get '/about_this_site'.body.should =~ /body.should/
 end
 ```
 
@@ -104,7 +105,7 @@ end
 
 # syntax highlighting
 
-Glorify makes this _way too easy_:
+[Glorify][glorify] makes this _way too easy_:
 
 ```ruby
 require 'glorify'
@@ -114,3 +115,4 @@ Tilt.prefer Sinatra::Glorify::Template
 [unicorn]: https://github.com/defunkt/unicorn
 [nginx]: http://wiki.nginx.org/Main
 [shotgun]: https://github.com/rtomayko/shotgun
+[glorify]: https://github.com/zzak/glorify
