@@ -64,13 +64,40 @@ I've casually deployed changes several times during the writing of this post.
 I wanted to run this whole thing inside a webserver setup which is fast and reliable.
 For this, I chose [unicorn][unicorn] behind [nginx][nginx].  Nginx handles buffering requests, and multiple unicorn processes serve them on a first-free basis.  The number of unicorn processes can be easily scaled up or down dynamically by sending signals to the main unicorn process.  New worker processes can overlap with old ones to allow zero-downtime service restarts.
 
-[unicorn]: https://github.com/defunkt/unicorn
-[nginx]: http://wiki.nginx.org/Main
 
 
 
 # hackability
-`todo`
+
+Every development convenience is provided for:
+
+Start a local dev server, which reloads source files on every request (using [shotgun][shotgun]):
+
+```bash
+rake
+```
+
+Watch SASS files and re-compile whenever they are changed:
+
+```
+rake sass
+```
+
+Add some new experimental interactive route to the site:
+
+```ruby
+get '/sandbox' do
+  # do crazy stuff here
+end
+```
+
+Test EVERYTHING:
+
+```ruby
+describe 'about_this_site' do
+  get '/about_this_site/'.body.should =~ /body.should/
+end
+```
 
 # monitoring
 `todo`
@@ -84,3 +111,6 @@ require 'glorify'
 Tilt.prefer Sinatra::Glorify::Template
 ```
 
+[unicorn]: https://github.com/defunkt/unicorn
+[nginx]: http://wiki.nginx.org/Main
+[shotgun]: https://github.com/rtomayko/shotgun
