@@ -89,4 +89,7 @@ blockquote {
   padding-left: 1em; }
 
 ul, ol, li {
-  list-style: disc inside; }
+  list-style: disc inside;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin: 0em 0em 0em 0em; }

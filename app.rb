@@ -10,7 +10,8 @@ Tilt.prefer Sinatra::Glorify::Template
 set :markdown, :layout_engine => :haml
 
 get '/' do
-  markdown :index, :layout => :layout
+  #markdown :index, :layout => :layout
+  markdown "posts/about_this_site".to_sym, :layout => :layout
 end
 
 get '/test' do
