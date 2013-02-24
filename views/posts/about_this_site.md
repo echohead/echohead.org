@@ -11,12 +11,12 @@ The code is on github [here](http://github.com/echohead/echohead.org).
 i pictured in my head what the perfect interface to this thing would be, and laid out a few requirements which descibed that interface, each of which will be explained in more detail below:
 
 * deploy with `git push`
-* no editing of html/css directly
-* language-appropriate syntax highlighting
-* conveniences for development mode
+* run in a fast, reliable webserver
 * hackability
 * tests
 * monitoring
+* language-appropriate syntax highlighting
+* no editing of html/css directly
 
 # deploying with `git push`
 As a developer, git is already constantly at my fingertips, so why not use it for deployment?
@@ -55,19 +55,32 @@ http://yourdomainname/__push_notification__
 ```
 
 Now, deployments are as simple as `git push origin master`, and go live within about 5 seconds!
-I've deployed changes several times even during the writing of this post.
+I've casually deployed changes several times during the writing of this post.
 
-# haml and sass
-`todo`
 
-# syntax highlighting
-`todo`
 
-# dev mode
-`todo`
+# the webserver
+
+I wanted to run this whole thing inside a webserver setup which is fast and reliable.
+For this, I chose [unicorn][unicorn] behind [nginx][nginx].  Nginx handles buffering requests, and multiple unicorn processes serve them on a first-free basis.  The number of unicorn processes can be easily scaled up or down dynamically by sending signals to the main unicorn process.  New worker processes can overlap with old ones to allow zero-downtime service restarts.
+
+[unicorn]: https://github.com/defunkt/unicorn
+[nginx]: http://wiki.nginx.org/Main
+
+
 
 # hackability
 `todo`
 
 # monitoring
 `todo`
+
+# syntax highlighting
+
+Glorify makes this _way too easy_:
+
+```ruby
+require 'glorify'
+Tilt.prefer Sinatra::Glorify::Template
+```
+
