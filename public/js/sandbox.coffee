@@ -11,16 +11,29 @@ class Lights
 
 class Set
   constructor: (@p) ->
+    @width  = 20   # row width
+    @rows = 12     # num rows in each direction
+
+  square: (startx, startz, width, black) ->
+    if black then @p.fill 0, 0, 0 else @p.fill 255, 255, 255
+    @p.beginShape()
+    @p.normal 0, 1, 0
+    @p.vertex startx, 0, startz
+    @p.vertex startx + width, 0, startz
+    @p.vertex startx + width, 0, startz + width
+    @p.vertex startx, 0, startz + width
+    @p.endShape()
+
+  black_square: (x, z) ->
+    ((x % 2 == 0) and (z % 2 == 1)) or ((x % 2 == 1) and (z % 2 == 0))
 
   draw: () ->
-    @p.fill 0, 0, 255
-    @p.beginShape()
-    @p.normal 0, 100, 0
-    @p.vertex 100, 0, 100
-    @p.vertex -100, 0, 100
-    @p.vertex -100, 0, -100
-    @p.vertex 100, 0, -100
-    @p.endShape()
+    start = -1 * @width * @rows / 2
+    for x in [0..@rows]
+      for z in [0..@rows]
+        xp = start + @width * x
+        zp = start + @width * z
+        @square xp, zp, @width, @black_square(x, z)
 
 ################################
 
@@ -34,16 +47,18 @@ class Cam
 
 class Guy
   constructor: (@p) ->
-    @x = 0
-    @y = 15
-    @z = 0
+    @x = @p.random -100, 100
+    @y = 15  # sphere's radius
+    @z = @p.random -100, 100
+    @t_offset = @p.random 100
 
   draw: (t) ->
-    @x = 100 * @p.sin(t / 1000.0)
-    @z = 100 * @p.cos(t / 1000.0)
+#    @x = 100 * @p.sin(t / 1000.0)
+#    @z = 100 * @p.cos(t / 1000.0)
+    cur_y = @y + 50 * Math.abs(@p.sin((t + @t_offset) / 500.0))
     @p.fill 255, 255, 255
     @p.pushMatrix()
-    @p.translate @x, @y, @z
+    @p.translate @x, cur_y, @z
     @p.sphere 15
     @p.popMatrix()
 
