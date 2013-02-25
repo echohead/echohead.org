@@ -12,7 +12,7 @@ class Lights
 class Set
   constructor: (@p) ->
     @width  = 20   # row width
-    @rows = 12     # num rows in each direction
+    @rows = 30     # num rows in each direction
 
   square: (startx, startz, width, black) ->
     if black then @p.fill 0, 0, 0 else @p.fill 255, 255, 255
@@ -39,18 +39,20 @@ class Set
 
 class Cam
   constructor: (@p) ->
-    @x = 0; @y = 20; @z = 200
-  draw: () ->
-    @p.camera -@x, @y, @z, -@x, @y, 0, 0, -1, 0
+    @y = 20; @z = 200.0
+  draw: (t) ->
+    cur_x = 100 * @p.sin(t / 1000.0)
+    cur_z = @z + 100 * @p.cos(t / 1000.0)
+    @p.camera cur_x, @y, cur_z, -cur_x, @y, -cur_z, 0, -1, 0
 
 ################################
 
 class Guy
   constructor: (@p) ->
-    @x = @p.random -100, 100
+    @x = @p.random -300, 300
     @y = 15  # sphere's radius
-    @z = @p.random -100, 100
-    @t_offset = @p.random 100
+    @z = @p.random -300, 300
+    @t_offset = @p.random 1000000
 
   draw: (t) ->
 #    @x = 100 * @p.sin(t / 1000.0)
@@ -78,7 +80,7 @@ coffee_draw = (p) ->
     @set = new Set(p)
     @lights = new Lights(p)
     @cam = new Cam(p)
-    @guy = new Guy(p)
+    @guys = (new Guy(p) for x in [1..10])
 
   text_sample = ->
     p.ellipse 30, 30, 20, 20
@@ -108,10 +110,10 @@ coffee_draw = (p) ->
     @t = now() - @start
     p.background 0
     p.noStroke()
-    @cam.draw()
+    @cam.draw(@t)
     @lights.draw()
     @set.draw()
-    @guy.draw(@t)
+    guy.draw(@t) for guy in @guys
 
   p.keyPressed = () ->
     console.log p.key
