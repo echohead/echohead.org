@@ -94,7 +94,7 @@ end
 
 # tests
 
-It should be simple to make assertions about *anything* without a lot of boilderplate:
+It should be simple to make assertions about *anything* without a lot of boilerplate:
 
 ```ruby
 describe 'about_this_site' do
