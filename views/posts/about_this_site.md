@@ -100,6 +100,20 @@ describe 'about_this_site' do
 end
 ```
 
+And ensure the tests pass in a pre-commit hook, for good measure:
+
+```bash
+#!/bin/bash
+git stash -q --keep-index
+rake spec
+res=$?
+git stash pop -q
+if [ $res -ne 0 ]; then
+  echo "tests FAILED! NO commit for you!!"
+  exit 1
+fi
+```
+
 # monitoring
 `todo`
 

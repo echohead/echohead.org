@@ -1,0 +1,9 @@
+#!/bin/bash
+git stash -q --keep-index
+rake spec
+res=$?
+git stash pop -q
+if [ $res -ne 0 ]; then
+  echo "tests FAILED! NO commit for you!!"
+  exit 1
+fi

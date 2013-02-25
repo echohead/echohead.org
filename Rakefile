@@ -5,7 +5,7 @@ RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts = '--color'
 end
 
-task :default => [:shotgun]
+task :default => [:commit_hook, :shotgun]
 
 task :sass do
   desc 'watch sass for changes and recompile (does not exit)'
@@ -25,5 +25,10 @@ task :install do
   system('bundle install') or raise `bundle install 2>&1`
 end
 
+task :commit_hook do
+  unless File.symlink? '.git/hooks/pre-commit'
+    File.symlink '../../bin/pre-commit', '.git/hooks/pre-commit'
+  end
+end
 
 ROOT = File.dirname __FILE__
