@@ -1,17 +1,65 @@
 %script( src="/js/libs/jquery-1.8.1.min.js" )
 %script( src="/js/libs/coffee-script.js" )
 %script( type="text/coffeescript" src="/js/music-player.coffee" )
-#container
+%link( rel='stylesheet' href='/css/music-player.css' )
 
-  %audio(id='audio' preload='auto' tabindex='0' controls='' type='audio/mpeg')
-    %source(type='audio/mp3' src='/music/2009/street-spirit.mp3')
-      your browser does not seem to support html5 audio.
+%h2 music
 
-  %ol#playlist
-    %li
-      %a(href='/music/2009/street-spirit.mp3') street spirit
-    %li
-      %a(href='/music/2009/rabbit.mp3') rabbit
-    %li
-      %a(href='/music/2009/long.mp3') long
+%audio(id='audio' preload='auto' tabindex='0' controls='')
+  / trailing slash is for autoclose, to pass w3c validation:
+  %source(type='audio/mp3' src='/music/2009/street-spirit.mp3')/
+  your browser does not seem to support html5 audio.
+
+%ol#playlist
+  %h3 2012
+  %li.active
+    %a(href="/music/2012/your_hand_in_mine.mp3") your hand in mine (explosions in the sky cover)
+
+  %h3 2011
+  %li
+    %a(href="http://quevelo.org/music/skylark/sailboat.mp3") sailboat (live with quevelo)
+  %li
+    %a(href="http://quevelo.org/music/skylark/fillmycup.mp3") fill my cup (live with quevelo)
+  %li
+    %a(href="http://quevelo.org/music/skylark/improv.mp3") jam (live with quevelo)
+
+  %h3 2010
+  %li
+    %a(href="/music/2010/machine.mp3") machine
+
+  %h3 2009
+  %li
+    %a(href="/music/2009/rabbit.mp3") rabbit
+  %li
+    %a(href="/music/2009/aquafina.mp3") aquafina
+  %li
+    %a(href="/music/2009/long.mp3") long
+  %li
+    %a(href="/music/2009/maroon-ed.mp3") maroon-ed
+  %li
+    %a(href="/music/2009/sailboatday.mp3") sailboat
+  %li
+    %a(href="/music/2009/allthativewanted.mp3") all that i've wanted
+  %li
+    %a(href="/music/2009/street-spirit.mp3") street-spirt (radiohead cover)
+
+  %h3 2002
+  %li
+    %a(href="/music/2002/1.mp3") 1 (with Bill Kohli)
+  %li
+    %a(href="/music/2002/2.mp3") 2 (with Bill Kohli)
+  %li
+    %a(href="/music/2002/3.mp3") 3 (with Bill Kohli)
+  %li
+    %a(href="/music/2002/4.mp3") 4 (with Bill Kohli)
+  %li
+    %a(href="/music/2002/fuckedupeverythingtoday.mp3") fucked up everything
+
+  %h3 2000
+  %li
+    %a(href="/music/2000/soft-tacofin.mp3") soft tacofin
+  %li
+    %a(href="/music/2000/1.27.mp3") 1.27
+  %li
+    %a(href="/music/2000/poo.mp3") poo
 
