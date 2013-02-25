@@ -17,15 +17,16 @@ $content-width: 74%;
 // fonts
 $font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
   Helvetica, "Arial Narrow", Arial, "Lucida Grande", Tahoma, Verdana sans-serif;
-//$font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, Tahoma, Verdana, sans-serif;
 
 body {
   font-family: $font-family;
   color: #000000;
+  height: 100%;
 }
 
 #wrapper {
   max-width: 960px;
+  min-height: 100%;
   padding: 2em 1.5em 0em 1.5em; // t r b l
   margin-left: auto;
   margin-right: auto;
@@ -60,15 +61,16 @@ body {
   margin-bottom: 3em;
 }
 
-#footer {
+#footer, #push {
   width: 74.4186%;
   float: left;
+  height: 2em;
   margin-right: 2.32558%;
   display: inline;
-  margin-bottom: 4.66667em;
+  margin-bottom: 1em;
   text-align: center;
   color: $medium-grey;
-  padding: 0.5em 0 4em 0;
+  padding: 0.5em 0 0 0;
 }
 
 code {
@@ -105,6 +107,10 @@ h5 { font-size: 1.4em; }
 p {
   padding-top: 0.6em;
   padding-bottom: 0.6em;
+}
+
+pre {
+  line-height: 1.4em;
 }
 
 strong { font-weight: bold; }

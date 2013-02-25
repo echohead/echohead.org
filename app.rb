@@ -19,7 +19,7 @@ get '/test' do
 end
 
 get '/music' do
-  markdown :music
+  haml :music
 end
 
 get '/sandbox' do
