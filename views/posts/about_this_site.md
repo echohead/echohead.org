@@ -92,7 +92,9 @@ get '/sandbox' do
 end
 ```
 
-Test EVERYTHING:
+# tests
+
+It should be simple to make assertions about *anything* without a lot of boilderplate:
 
 ```ruby
 describe 'about_this_site' do
@@ -100,7 +102,7 @@ describe 'about_this_site' do
 end
 ```
 
-And ensure the tests pass in a pre-commit hook, for good measure:
+And might as well run the tests from a pre-commit hook, so that commits with failing tests are not possible:
 
 ```bash
 #!/bin/bash
