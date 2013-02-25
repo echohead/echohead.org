@@ -6,6 +6,7 @@ svc_user=web
 svc_name=echohead.org
 svc_dir=/opt/$svc_name
 repo=https://github.com/echohead/echohead.org.git
+music_repo=https://github.com/echohead/music.git
 port=9600
 
 stop $svc_name || echo "$svc_name not running."
@@ -14,16 +15,24 @@ id $svc_user || useradd -G admin -m $svc_user -s /bin/false
 
 apt-get install --yes libxslt-dev libxml2-dev git-core rake ruby-bundler nginx
 
-if [ -d $svc_dir ]; then rm -rf $svc_dir; fi
-git clone $repo $svc_dir
-mkdir -p $svc_dir/log
-mkdir -p $svc_dir/run
+if [ ! -d $svc_dir ]; then
+  git clone $repo $svc_dir
+  mkdir -p $svc_dir/log
+  mkdir -p $svc_dir/run
+fi
 
 cd $svc_dir && rake install
+
+# music is in a seperate repo
+if [ ! -e $svc_dir/public/music ]; then
+  git clone $music_repo $svc_dir/public/music
+fi
 
 chown -R $svc_user:$svc_user $svc_dir
 
 grep $svc_user /etc/sudoers || echo "$svc_user   ALL=(ALL) NOPASSWD: /sbin/restart echohead.org" >> /etc/sudoers
+
+
 
 
 # nginx reverse proxy
