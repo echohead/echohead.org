@@ -26,3 +26,10 @@ describe 'the sandbox' do
   it 'should link to coffee source' do @body.should =~ /sandbox.coffee/ end
 end
 
+describe 'env' do
+  it 'redirects to the bootstrap script on github' do
+    resp = get '/env'
+    resp.status.should == 302
+    resp.headers['Location'].should =~ /raw.github.com\/echohead/
+  end
+end

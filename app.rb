@@ -30,6 +30,10 @@ get '/post/:post' do |p|
   markdown "posts/#{p}".to_sym, :layout => :layout
 end
 
+get '/env' do
+  redirect to('https://raw.github.com/echohead/env/master/bootstrap')
+end
+
 post '/__push__' do
   begin
     puts "received push notification: #{params[:payload]}"
