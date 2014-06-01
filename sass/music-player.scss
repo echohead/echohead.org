@@ -2,19 +2,21 @@
   background: #fff;
   width: 80%;
   padding: 1em 1.5em 1em 1.5em;
+
+  li a {
+    padding: 5px;
+    display: block;
+  }
+
+  li a:hover { text-decoration: none; }
+
+  // active song title
+  .active a {
+    color: #5DB0E6;
+    background: #ddd;
+    text-decoration: none;
+  }
+
 }
 
-// active song title
-.active a {
-  color: #5DB0E6;
-  background: #ddd;
-  text-decoration: none;
-}
 
-li a {
-  //background: #999;
-  padding: 5px;
-  display: block;
-}
-
-li a:hover { text-decoration: none; }

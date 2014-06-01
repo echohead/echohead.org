@@ -26,6 +26,10 @@ get '/sandbox' do
   haml :sandbox
 end
 
+get '/rogue' do
+  haml :rogue
+end
+
 get '/post/:post' do |p|
   markdown "posts/#{p}".to_sym, :layout => :layout
 end

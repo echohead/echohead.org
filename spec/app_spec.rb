@@ -16,7 +16,10 @@ end
 describe 'the music page' do
   before :all do @body = ok_body('/music') end
 
-  it 'has songs on it' do pending 'todo' end
+  it 'has songs on it' do
+    @body.should =~ /rabbit\.mp3/
+    @body.should =~ /sailboat/
+  end
 end
 
 describe 'the sandbox' do

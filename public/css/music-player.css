@@ -2,15 +2,12 @@
   background: #fff;
   width: 80%;
   padding: 1em 1.5em 1em 1.5em; }
-
-.active a {
-  color: #5DB0E6;
-  background: #ddd;
-  text-decoration: none; }
-
-li a {
-  padding: 5px;
-  display: block; }
-
-li a:hover {
-  text-decoration: none; }
+  #playlist li a, audio li a {
+    padding: 5px;
+    display: block; }
+  #playlist li a:hover, audio li a:hover {
+    text-decoration: none; }
+  #playlist .active a, audio .active a {
+    color: #5DB0E6;
+    background: #ddd;
+    text-decoration: none; }

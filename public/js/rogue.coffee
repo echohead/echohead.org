@@ -80,8 +80,7 @@ coffee_draw = (p) ->
     @set = new Set(p)
     @lights = new Lights(p)
     @cam = new Cam(p)
-    #@guys = (new Guy(p) for x in [1..10])
-    @guys = []
+    @guys = (new Guy(p) for x in [1..10])
 
   text_sample = ->
     p.ellipse 30, 30, 20, 20
@@ -128,5 +127,5 @@ coffee_draw = (p) ->
 
 
 $(document).ready ->
-  canvas = document.getElementById "processing"
+  canvas = document.getElementById "rogue"
   processing = new Processing(canvas, coffee_draw)
